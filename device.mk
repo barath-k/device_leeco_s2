@@ -202,6 +202,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     keystore.msm8952
 
+# LePref settigs modules
+PRODUCT_PACKAGES += \
+    LePref
+
 # Libshims
 PRODUCT_PACKAGES += \
     libshims_camera \
