@@ -547,31 +547,24 @@ vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/hw/vulkan.msm8952.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
 vendor/lib/libOpenCL.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
-vendor/lib/libc2d30-a3xx.so
-vendor/lib/libc2d30-a4xx.so
 vendor/lib/libc2d30-a5xx.so
 vendor/lib/libc2d30_bltlib.so
-vendor/lib/libEGL_adreno.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
 vendor/lib/libmm-disp-apis.so
-vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libmm-qdcm.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
 vendor/lib/libsd_sdk_display.so
-vendor/lib/libmm-dspp-utils.so
-vendor/lib/libmm-qdcm-diag.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -579,44 +572,34 @@ vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/hw/vulkan.msm8952.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
-vendor/lib64/libc2d30-a3xx.so
-vendor/lib64/libc2d30-a4xx.so
 vendor/lib64/libc2d30-a5xx.so
 vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libEGL_adreno.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 vendor/lib64/libmm-disp-apis.so
-vendor/lib64/libmm-hdcpmgr.so
-vendor/lib64/libmm-qdcm.so
 vendor/lib64/libmm-dspp-utils.so
 vendor/lib64/libmm-qdcm-diag.so
+vendor/lib64/libmm-qdcm.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscale.so
 vendor/lib64/libsd_sdk_display.so
 
 # Graphics firmware
-etc/firmware/a225p5_pm4.fw
-etc/firmware/a225_pfp.fw
-etc/firmware/a225_pm4.fw
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/a330_pfp.fw
-etc/firmware/a330_pm4.fw
-etc/firmware/a420_pfp.fw
-etc/firmware/a420_pm4.fw
 etc/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw
+
+# Graphics vulkan
+vendor/lib/hw/vulkan.msm8952.so
+vendor/lib64/hw/vulkan.msm8952.so
 
 # Keystore
 vendor/lib64/hw/keystore.msm8952.so
@@ -743,12 +726,25 @@ vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
 # Postprocessing
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+framework/com.qti.snapdragon.sdk.display.jar
+-lib/vendor.display.color@1.0.so
+lib/vendor.display.postproc@1.0.so
+lib/vendor.qti.hardware.qdutils_disp@1.0.so
+-lib64/vendor.display.color@1.0.so
+lib64/vendor.display.postproc@1.0.so
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/bin/mm-pp-daemon
-vendor/lib64/libdisp-aba.so
-vendor/lib64/libmm-als.so
-vendor/lib64/libmm-dspp-utils.so
 vendor/lib/libdisp-aba.so
-vendor/lib/libmm-als.so
+vendor/lib/libsd_sdk_display.so
+vendor/lib/vendor.display.color@1.0_vendor.so
+vendor/lib/vendor.display.postproc@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/libsd_sdk_display.so
+vendor/lib64/vendor.display.color@1.0_vendor.so
+vendor/lib64/vendor.display.postproc@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 
 # QMI
 vendor/bin/irsc_util
