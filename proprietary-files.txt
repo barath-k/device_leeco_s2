@@ -36,47 +36,30 @@ etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 
 # ADSP
+lib/libqvr_adsp_driver_stub.so
 vendor/bin/adsprpcd
-vendor/lib64/libadsprpc.so
-vendor/lib64/libmdsprpc.so
 vendor/lib/libadsprpc.so
+vendor/lib/libadsp_default_listener.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
-vendor/lib/libmdsprpc.so
-vendor/lib/libscve_mv.so
-vendor/lib/libscve.so
-vendor/lib/libscve_stub.so
-vendor/lib/libscveTextRecoPostProcessing.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
 
 # ADSP modules
+lib/rfsa/adsp/libqvr_adsp_driver_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
+vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libexternal_dog_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
-vendor/lib/rfsa/adsp/libpanorama_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libscveTextReco_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 
 # Audio libraries
 etc/settings/mono_qcom.cnt
 -lib/libtfa9890.so
 -lib64/libtfa9890.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbmapper.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
--vendor/lib64/libaudioalsa.so
-vendor/lib64/libhwdaphal.so
-vendor/lib64/libtinyxml.so
-vendor/lib64/libassetsverifier.so
-vendor/lib64/libaudioparsers.so
-vendor/lib64/libavenhancements.so
-vendor/lib64/libFlacSwDec.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
@@ -84,19 +67,22 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
--vendor/lib/libaudioalsa.so
-vendor/lib/libassetsverifier.so
-vendor/lib/libaudioparsers.so
-vendor/lib/libavenhancements.so
-vendor/lib/libdlbdapstorage.so
-vendor/lib/libFlacSwDec.so
+vendor/lib/libaudioalsa.so
 vendor/lib/libhwdaphal.so
-vendor/lib/libtinyxml.so
-vendor/lib/libqct_resampler.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
-vendor/lib/soundfx/libswdap.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbmapper.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libaudioalsa.so
+vendor/lib64/libhwdaphal.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcreverb.so
+vendor/lib64/soundfx/libqcvirt.so
 
 # Bluetooth
 vendor/bin/btnvtool
@@ -384,14 +370,6 @@ vendor/lib/libwms.so
 vendor/lib/libwqe.so
 vendor/lib/libxml.so
 
-# Crypto
-vendor/lib/libFidoCryptoJNI.so
-vendor/lib/libFidoCrypto.so
-vendor/lib/libFIDOKeyProvisioning.so
-vendor/lib64/libFidoCryptoJNI.so
-vendor/lib64/libFidoCrypto.so
-vendor/lib64/libFIDOKeyProvisioning.so
-
 # Dolby
 etc/dts/dts-m6m8-lic.key
 
@@ -606,77 +584,64 @@ vendor/lib64/hw/keystore.msm8952.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8952.so
+vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
+vendor/lib/vendor.qti.voiceprint@1.0.so
+vendor/lib64/vendor.qti.voiceprint@1.0.so
 
 # Media
-lib/libdashplayer.so
-lib/libDxHdcp.so
-lib/libqrDec.so
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmmosal.so
-vendor/lib64/libmmsw_detail_enhancement.so
-vendor/lib64/libmmsw_math.so
-vendor/lib64/libmmsw_opencl.so
-vendor/lib64/libmmsw_platform.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxMux.so
-vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libExtendedExtractor.so
-vendor/lib64/libextendedremotedisplay.so
-vendor/lib64/libHevcSwEncoder.so
-vendor/lib64/libmmhttpstack.so
-vendor/lib64/libmmiipstreammmihttp.so
-vendor/lib64/libmmipstreamaal.so
-vendor/lib64/libmmipstreamnetwork.so
-vendor/lib64/libmmipstreamsourcehttp.so
-vendor/lib64/libmmipstreamutils.so
-vendor/lib64/libmmparser_lite.so
-vendor/lib64/libmmparser.so
-vendor/lib64/libmmrtpdecoder.so
-vendor/lib64/libmmrtpencoder.so
-vendor/lib64/libmmwfdinterface.so
-vendor/lib64/libmmwfdsinkinterface.so
-vendor/lib64/libmmwfdsrcinterface.so
-vendor/lib64/libFileMux.so
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib/libFileMux.so
+lib/libOmxMux.so
+lib/libOmxVpp.so
+lib/libmmosal.so
+lib/libmmparser_lite.so
+lib/libvpplibrary.so
+lib/libwfdcommonutils.so
+lib/libwfdconfigutils.so
+lib/libwfdmminterface.so
+lib64/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib64/libFileMux.so
+lib64/libOmxMux.so
+lib64/libOmxVpp.so
+lib64/libmmosal.so
+lib64/libmmparser_lite.so
+lib64/libvpplibrary.so
+lib64/libwfdcommonutils.so
+lib64/libwfdconfigutils.so
+lib64/libwfdmminterface.so
+vendor/lib/libAlacSwDec.so
+vendor/lib/libApeSwDec.so
 vendor/lib/libI420colorconvert.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAlacDec.so
+vendor/lib/libOmxAlacDecSw.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxApeDec.so
+vendor/lib/libOmxApeDecSw.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal.so
 vendor/lib/libmmsw_detail_enhancement.so
 vendor/lib/libmmsw_math.so
 vendor/lib/libmmsw_opencl.so
 vendor/lib/libmmsw_platform.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxMux.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libExtendedExtractor.so
-vendor/lib/libextendedremotedisplay.so
-vendor/lib/libHevcSwEncoder.so
-vendor/lib/libmmhttpstack.so
-vendor/lib/libmmiipstreammmihttp.so
-vendor/lib/libmmipstreamaal.so
-vendor/lib/libmmipstreamnetwork.so
-vendor/lib/libmmipstreamsourcehttp.so
-vendor/lib/libmmipstreamutils.so
-vendor/lib/libmmparser_lite.so
-vendor/lib/libmmparser.so
-vendor/lib/libmmQSM.so
-vendor/lib/libmmrtpdecoder.so
-vendor/lib/libmmrtpencoder.so
-vendor/lib/libmmwfdinterface.so
-vendor/lib/libmmwfdsinkinterface.so
-vendor/lib/libmmwfdsrcinterface.so
-vendor/lib/libomx-dts.so
-vendor/lib/libstagefright_soft_ddpdec.so
-vendor/lib/libFileMux.so
+vendor/lib64/libAlacSwDec.so
+vendor/lib64/libApeSwDec.so
+vendor/lib64/libI420colorconvert.so
+vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAlacDec.so
+vendor/lib64/libOmxAlacDecSw.so
+vendor/lib64/libOmxAmrwbplusDec.so
+vendor/lib64/libOmxApeDec.so
+vendor/lib64/libOmxApeDecSw.so
+vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmsw_detail_enhancement.so
+vendor/lib64/libmmsw_math.so
+vendor/lib64/libmmsw_opencl.so
+vendor/lib64/libmmsw_platform.so
 
 # Media firmware
 etc/firmware/venus.b00
@@ -693,12 +658,6 @@ etc/firmware/venus-v1.b03
 etc/firmware/venus-v1.b04
 etc/firmware/venus-v1.mbn
 etc/firmware/venus-v1.mdt
-
-# Network
-vendor/lib64/libQtiTether.so
-vendor/lib64/libconnctrl.so
-vendor/lib/libQtiTether.so
-vendor/lib/libconnctrl.so
 
 # Perf
 vendor/lib/vendor.qti.hardware.perf@1.0.so|cd7ddfd240d8a980396c10ffc01070713518087d
@@ -924,44 +883,6 @@ etc/firmware/widevine.mdt
 vendor/bin/cnss-daemon
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_nofem.bin
-
-# Wifi display 
-vendor/lib/libwfdcommonutils.so
-vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmsink.so
-vendor/lib/libwfdmmsrc.so
-vendor/lib/libwfdmmutils.so
-vendor/lib/libwfdnative.so
-vendor/lib/libwfdrtsp.so
-vendor/lib/libwfdservice.so
-vendor/lib/libwfdsm.so
-vendor/lib/libwfduibcinterface.so
-vendor/lib/libwfduibcsinkinterface.so
-vendor/lib/libwfduibcsink.so
-vendor/lib/libwfduibcsrcinterface.so
-vendor/lib/libwfduibcsrc.so
-vendor/lib64/libwfdcommonutils.so
-vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libwfdmmsink.so
-vendor/lib64/libwfdmmsrc.so
-vendor/lib64/libwfdmmutils.so
-vendor/lib64/libwfdnative.so
-vendor/lib64/libwfdrtsp.so
-vendor/lib64/libwfdservice.so
-vendor/lib64/libwfdsm.so
-vendor/lib64/libwfduibcinterface.so
-vendor/lib64/libwfduibcsinkinterface.so
-vendor/lib64/libwfduibcsink.so
-vendor/lib64/libwfduibcsrcinterface.so
-vendor/lib64/libwfduibcsrc.so
-
-# Secure
-vendor/lib/libSampleAuthJNI.so
-vendor/lib64/libSampleAuthJNI.so
-
-# Listen service
-vendor/lib/liblistenjni.so
-vendor/lib/liblistensoundmodel2.so
 
 # Haxx
 vendor/lib/libhardware_aaaaaa.so
