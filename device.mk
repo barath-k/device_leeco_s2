@@ -306,6 +306,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstlport
 
+# TimeKeep
+PRODUCT_PACKAGES += \
+    timekeep \
+	TimeKeep
+	
 # Thermal
 PRODUCT_PACKAGES += \
     thermal.msm8952

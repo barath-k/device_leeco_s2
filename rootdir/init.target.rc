@@ -180,10 +180,11 @@ service qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-service time_daemon /vendor/bin/time_daemon
+service timekeep /system/bin/timekeep restore
    class late_start
    user root
    group root
+   oneshot
 
 service audiod /vendor/bin/audiod
    class late_start
