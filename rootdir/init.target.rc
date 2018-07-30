@@ -180,11 +180,6 @@ service qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-service perfd /vendor/bin/perfd
-   class main
-   user root
-   disabled
-
 service time_daemon /vendor/bin/time_daemon
    class late_start
    user root
