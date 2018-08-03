@@ -157,7 +157,9 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     libgenlock \
     liboverlay \
-    libtinyxml
+    libtinyxml \
+    vendor.display.color@1.0-service \
+    vendor.display.color@1.0-impl
 
 
 # Display / OpenGLES
@@ -248,19 +250,16 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxSwVencMpeg4 \
     libOmxSwVencHevc \
     libOmxVdec \
-    libOmxVdecHevc \
-    libOmxVidcCommon \
     libOmxVenc \
-    libstagefrighthw \
-    libstagefright_soft_flacdec
+    libstagefrighthw
 
 # IPA Manager
 PRODUCT_PACKAGES += \
