@@ -157,7 +157,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     libgenlock \
     liboverlay \
-    libtinyxmls
+    libtinyxml
 
 
 
