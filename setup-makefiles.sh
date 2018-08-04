@@ -43,6 +43,8 @@ write_headers
 
 # The blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
+echo "" >> "$PRODUCTMK"
+write_makefiles "$MY_DIR"/proprietary-files-qc.txt
 
 # We are done!
 write_footers
