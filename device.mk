@@ -157,9 +157,8 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     libgenlock \
     liboverlay \
-    libtinyxml \
-    vendor.display.color@1.0-service \
-    vendor.display.color@1.0-impl
+    libtinyxmls
+
 
 
 # Display / OpenGLES
