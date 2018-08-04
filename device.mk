@@ -288,7 +288,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
-	libprotobuf-cpp-full \
     libxml2 \
     libqsap_sdk \
     telephony-ext \

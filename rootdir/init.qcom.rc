@@ -276,24 +276,6 @@ on post-fs-data
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
 
-    # Mark the copy complete flag to not completed
-    write /data/vendor/radio/copy_complete 0
-    chown radio radio /data/vendor/radio/copy_complete
-    chmod 0660 /data/vendor/radio/copy_complete
-
-    # copy prebuilt qcril.db files always
-    copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
-    chown radio radio /data/vendor/radio/qcril_prebuilt.db
-    chmod 0660 /data/vendor/radio/qcril_prebuilt.db
-
-    # File flags for prebuilt ril db file
-    write /data/vendor/radio/prebuilt_db_support 1
-    chown radio radio /data/vendor/radio/prebuilt_db_support
-    chmod 0400 /data/vendor/radio/prebuilt_db_support
-    write /data/vendor/radio/db_check_done 0
-    chown radio radio /data/vendor/radio/db_check_done
-    chmod 0660 /data/vendor/radio/db_check_done
-
     # Sensor
     mkdir /persist/sensors 0775 system system
     chmod 664 /persist/sensors/sensors_settings
@@ -308,6 +290,11 @@ service qfintverify /sbin/qfintverify
     class core
     seclabel u:r:qfips:s0
     oneshot
+
+service qcomsysd /vendor/bin/qcom-system-daemon
+    class main
+    user root
+    group root diag
 
 on property:ro.baseband=msm
     start qmuxd
@@ -364,11 +351,12 @@ service cnd /vendor/bin/cnd
     socket cnd stream 660 root inet
     group root wakelock
 
-	
-service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group system
+service dpmd /system/bin/dpmd
+    class late_start
+    socket dpmd stream 660 root system
+    socket tcm  stream 660 root inet
+    socket dpmwrapper stream 660 root inet
+    group system readproc inet radio wake
 
 service irsc_util /vendor/bin/irsc_util "/etc/sec_config"
     class main
