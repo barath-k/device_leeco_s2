@@ -164,10 +164,6 @@ namespace android {
                         return state.color & 0x00ffffff;
                     }
 
-                    bool Light::isRgbSyncAvailable() {
-                        std::ifstream stream(RGB_BLINK_FILE);
-                        return stream.good();
-                    }
 
                     int Light::rgbToBrightness(const LightState &state) {
                         int color = state.color & 0x00ffffff;
@@ -254,7 +250,7 @@ namespace android {
                         blink = onMS > 0 && offMS > 0;
 
                         if (blink) {
-							 sprintf(pattern, "2 %d 2 %d",onS,offS);
+							 sprintf(pattern, "2 %d 2 %d",onMS,offMS);
                                 if (red) {
 				    writeStr(RED_BREATH_FILE, pattern);
                                     if (writeInt(RED_BLINK_FILE, onMS == offMS ? 2 : 1)) {
@@ -316,6 +312,7 @@ namespace android {
                     }
 
                     int Light::setButtonBacklight(const LightState& state) {
+						int err;
 						int on = isLit(state);
                         if(!mDevice) {
                             return -1;
@@ -324,7 +321,7 @@ namespace android {
                         pthread_mutex_lock(&mDevice->g_lock);
 						err = write_int(BUTTON_FILE,on?1:0);
                         pthread_mutex_unlock(&mDevice->g_lock);
-                        return 0;
+                        return err;
                     }
 
                     const static std::map<Type, const char *> kLogicalLights = {

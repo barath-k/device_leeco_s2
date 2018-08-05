@@ -129,7 +129,6 @@ namespace android {
                         int setSpeakerLightLocked(const LightState &state);
                         std::string getScaledDutyPcts(int brightness);
                         int isLit(const LightState &state);
-                        bool isRgbSyncAvailable();
                         int rgbToBrightness(const LightState &state);
                         static int writeInt(const std::string &path, int value);
                         static int readInt(const std::string &path);
