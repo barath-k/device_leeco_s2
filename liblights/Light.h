@@ -56,34 +56,31 @@ static constexpr int RAMP_SIZE = 8;
 static constexpr int BRIGHTNESS_RAMP[RAMP_SIZE] = {0, 14, 28, 42, 56, 70, 84, 100};
 
 const static std::string RED_LED_FILE
-        = "/sys/class/leds/led:rgb_red/brightness";
+        = "/sys/class/leds/red/brightness";
 
 const static std::string GREEN_LED_FILE
-        = "/sys/class/leds/led:rgb_green/brightness";
+        = "/sys/class/leds/green/brightness";
 
 const static std::string BLUE_LED_FILE
-        = "/sys/class/leds/led:rgb_blue/brightness";
-
-const static std::string RED_LED_DUTY_PCTS_FILE
-        = "/sys/class/leds/led:rgb_red/duty_pcts";
-
-const static std::string GREEN_LED_DUTY_PCTS_FILE
-        = "/sys/class/leds/led:rgb_green/duty_pcts";
-
-const static std::string BLUE_LED_DUTY_PCTS_FILE
-        = "/sys/class/leds/led:rgb_blue/duty_pcts";
+        = "/sys/class/leds/blue/brightness";
 
 const static std::string RED_BLINK_FILE
-        = "/sys/class/leds/led:rgb_red/blink";
+        = "/sys/class/leds/red/blink";
 
 const static std::string GREEN_BLINK_FILE
-        = "/sys/class/leds/led:rgb_green/blink";
+        = "/sys/class/leds/green/blink";
 
 const static std::string BLUE_BLINK_FILE
-        = "/sys/class/leds/led:rgb_blue/blink";
+       = "/sys/class/leds/blue/blink";
 
-const static std::string RGB_BLINK_FILE
-        = "/sys/class/leds/rgb/rgb_blink";
+const static std::string RED_BREATH_FILE
+        = "/sys/class/leds/red/led_time";
+
+const static std::string GREEN_BREATH_FILE
+        = "/sys/class/leds/green/led_time";
+
+const static std::string BLUE_BREATH_FILE
+        = "/sys/class/leds/blue/led_time";
 
 const static std::string LCD_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
@@ -91,8 +88,8 @@ const static std::string LCD_FILE
 const static std::string LCD_MAX_FILE
         = "/sys/class/leds/lcd-backlight/max_brightness";
 
-const static std::string PERSISTENCE_FILE
-        = "/sys/class/graphics/fb0/msm_fb_persist_mode";
+const static std::string BUTTON_FILE
+        = "/sys/class/leds/button-backlight/brightness";
 
 namespace android {
     namespace hardware {
@@ -126,6 +123,7 @@ namespace android {
                         LightState notificationState;
                         int setLightBacklight(const LightState &state);
                         int setLightBattery(const LightState &state);
+						int setButtonBacklight(const LightState &state);
                         int setLightNotifications(const LightState &state);
                         void handleSpeakerBatteryLocked();
                         int setSpeakerLightLocked(const LightState &state);

@@ -83,6 +83,10 @@ namespace android {
                                 LOG(DEBUG) << __func__ << " : Type::NOTIFICATIONS";
                                 setLightNotifications(state);
                                 break;
+							case Type::BUTTONS:
+                                LOG(DEBUG) << __func__ << " : Type::NOTIFICATIONS";
+                                setButtonBacklight(state);
+                                break;
                             default:
                                 LOG(DEBUG) << __func__ << " : Unknown light type";
                                 return Status::LIGHT_NOT_SUPPORTED;
@@ -221,6 +225,7 @@ namespace android {
                         int red, green, blue;
                         bool blink;
                         int onMS, offMS;
+						char pattern[PAGE_SIZE];
                         unsigned int colorRGB;
 
                         if (!mDevice) {
@@ -251,33 +256,27 @@ namespace android {
                         blue = colorRGB & 0xFF;
                         blink = onMS > 0 && offMS > 0;
 
-                        if (isRgbSyncAvailable()) {
-                            writeInt(RGB_BLINK_FILE, 0);
-                        }
-
                         if (blink) {
-                            if (isRgbSyncAvailable()) {
-                                writeStr(RED_LED_DUTY_PCTS_FILE, getScaledDutyPcts(red));
-                                writeStr(GREEN_LED_DUTY_PCTS_FILE, getScaledDutyPcts(green));
-                                writeStr(BLUE_LED_DUTY_PCTS_FILE, getScaledDutyPcts(blue));
-                                writeInt(RGB_BLINK_FILE, 1);
-                            } else {
+							 sprintf(pattern, "2 %d 2 %d",onS,offS);
                                 if (red) {
+									writeStr(RED_BREATH_FILE, pattern);
                                     if (writeInt(RED_BLINK_FILE, onMS == offMS ? 2 : 1)) {
                                         writeInt(RED_LED_FILE, 0);
                                     }
                                }
                                if (green) {
+								   writeStr(GREEN_BREATH_FILE, pattern);
                                     if (writeInt(GREEN_BLINK_FILE, onMS == offMS ? 2 : 1)) {
                                         writeInt(GREEN_LED_FILE, 0);
                                     }
                                }
                                if (blue) {
+								   writeStr(BLUE_BREATH_FILE, pattern);
                                     if (writeInt(BLUE_BLINK_FILE, onMS == offMS ? 2 : 1)) {
                                         writeInt(BLUE_LED_FILE, 0);
                                     }
                                }
-                            }
+                          
                         } else {
                             writeInt(RED_LED_FILE, red);
                             writeInt(GREEN_LED_FILE, green);
@@ -319,10 +318,23 @@ namespace android {
                         return 0;
                     }
 
+                    int Light::setButtonBacklight(const LightState& state) {
+						int on = isLit(state);
+                        if(!mDevice) {
+                            return -1;
+                        }
+
+                        pthread_mutex_lock(&mDevice->g_lock);
+						err = write_int(BUTTON_FILE,on?1:0);
+                        pthread_mutex_unlock(&mDevice->g_lock);
+                        return 0;
+                    }
+
                     const static std::map<Type, const char *> kLogicalLights = {
                             {Type::BACKLIGHT,     LIGHT_ID_BACKLIGHT},
                             {Type::BATTERY,       LIGHT_ID_BATTERY},
-                            {Type::NOTIFICATIONS, LIGHT_ID_NOTIFICATIONS}
+                            {Type::NOTIFICATIONS, LIGHT_ID_NOTIFICATIONS},
+							{Type::BUTTONS,       LIGHT_ID_BUTTONS}
                     };
 
                     Return<void> Light::getSupportedTypes(getSupportedTypes_cb _hidl_cb) {
