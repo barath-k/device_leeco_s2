@@ -83,7 +83,7 @@ namespace android {
                                 LOG(DEBUG) << __func__ << " : Type::NOTIFICATIONS";
                                 setLightNotifications(state);
                                 break;
-							case Type::BUTTONS:
+			    case Type::BUTTONS:
                                 LOG(DEBUG) << __func__ << " : Type::NOTIFICATIONS";
                                 setButtonBacklight(state);
                                 break;
@@ -192,9 +192,6 @@ namespace android {
                         // and it has been disabled send an ioctl to the display with the update
                         if ((mDevice->g_last_backlight_mode != currState && lpEnabled) ||
                                 (!lpEnabled && mDevice->g_last_backlight_mode == BRIGHTNESS_MODE_LOW_PERSISTENCE)) {
-                            if ((err = writeInt(PERSISTENCE_FILE, lpEnabled)) != 0) {
-                                LOG(ERROR) << __func__ << " : Failed to write to " << PERSISTENCE_FILE << ": " << strerror(errno);
-                            }
                             if (lpEnabled != 0) {
                                 // Try to get the brigntess though property, otherwise it will
                                 // set the default brightness, which is defined in BoardConfig.mk.
@@ -259,19 +256,19 @@ namespace android {
                         if (blink) {
 							 sprintf(pattern, "2 %d 2 %d",onS,offS);
                                 if (red) {
-									writeStr(RED_BREATH_FILE, pattern);
+				    writeStr(RED_BREATH_FILE, pattern);
                                     if (writeInt(RED_BLINK_FILE, onMS == offMS ? 2 : 1)) {
                                         writeInt(RED_LED_FILE, 0);
                                     }
                                }
                                if (green) {
-								   writeStr(GREEN_BREATH_FILE, pattern);
+				    writeStr(GREEN_BREATH_FILE, pattern);
                                     if (writeInt(GREEN_BLINK_FILE, onMS == offMS ? 2 : 1)) {
                                         writeInt(GREEN_LED_FILE, 0);
                                     }
                                }
                                if (blue) {
-								   writeStr(BLUE_BREATH_FILE, pattern);
+				    writeStr(BLUE_BREATH_FILE, pattern);
                                     if (writeInt(BLUE_BLINK_FILE, onMS == offMS ? 2 : 1)) {
                                         writeInt(BLUE_LED_FILE, 0);
                                     }
