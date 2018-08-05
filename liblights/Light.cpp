@@ -319,7 +319,7 @@ namespace android {
                         }
 
                         pthread_mutex_lock(&mDevice->g_lock);
-						err = write_int(BUTTON_FILE,on?1:0);
+						err = writeInt(BUTTON_FILE,on?1:0);
                         pthread_mutex_unlock(&mDevice->g_lock);
                         return err;
                     }
