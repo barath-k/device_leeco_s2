@@ -524,10 +524,10 @@ vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
 
 # Thermal
-vendor/bin/thermal-engine
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
--vendor/lib/libthermalclient.so
+vendor/bin/thermal-engine|40990b4c75dcb7d354e9bd768b387224bfe79bfd
+-vendor/lib/libthermalclient.so|5e77723f69df323a85360c39722b8da00297ba9a
+-vendor/lib64/libthermalclient.so|5b5dcfc714a31a65e1757ef786e697b1a69e012e
+vendor/lib64/libthermalioctl.so|96cdd452d6ca70256b8621ec5ae8ac2ba0292260
 
 # Time services
 -vendor/lib64/libtime_genoff.so
