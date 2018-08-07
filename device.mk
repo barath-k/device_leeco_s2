@@ -182,6 +182,10 @@ PRODUCT_PACKAGES += \
     fingerprint.msm8952 \
     fingerprintd
 
+# Healthd packages
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # IR
 PRODUCT_PACKAGES += \
     consumerir.msm8952
