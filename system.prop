@@ -18,6 +18,7 @@ rild.libargs=-d /dev/smd0
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 ro.telephony.default_network=22
+persist.radio.add_power_save=1
 persist.radio.multisim.config=dsds
 persist.radio.csvt.enabled=false
 persist.radio.rat_on=combine
