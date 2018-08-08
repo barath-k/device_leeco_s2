@@ -88,9 +88,6 @@ persist.camera.HAL3.enabled=1
 vidc.enc.dcvs.extra-buff-count=2
 camera.lowpower.record.enable=1
 
-# DRM
-drm.service.enabled=true
-
 # Audio voice concurrency related flags
 voice.playback.conc.disabled=true
 voice.record.conc.disabled=false
