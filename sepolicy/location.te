@@ -1,2 +1,2 @@
-get_prop(location, wcnss_prop);
-allow location sysfs:dir { r_dir_perms };
+allow location system_data_file:dir { add_name remove_name write };
+allow location system_data_file:sock_file { create setattr unlink };
