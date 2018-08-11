@@ -308,6 +308,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# TimeKeep
+PRODUCT_PACKAGES += \
+    timekeep \
+	TimeKeep
+	
 # Thermal
 PRODUCT_PACKAGES += \
     thermal.msm8952
