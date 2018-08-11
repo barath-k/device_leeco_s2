@@ -213,7 +213,7 @@ PRODUCT_PACKAGES += \
 
 # Livedisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-legacymm
+    vendor.lineage.livedisplay@1.0-service-sdm
 
 # GPS
 PRODUCT_PACKAGES += \
