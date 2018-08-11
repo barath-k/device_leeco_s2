@@ -22,7 +22,7 @@ $(call inherit-product-if-exists, vendor/leeco/s2/s2-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-nitrogen
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -390,6 +390,3 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-# Model is set via init library
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
-    ro.product.model

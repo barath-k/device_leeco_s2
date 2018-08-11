@@ -245,3 +245,6 @@ persist.sys.usb.config=adb
 
 #low audio flinger standby delay to reduce power consumption
 ro.audio.flinger_standbytime_ms=300
+
+# Model is set via init library 
+ ro.product.model  
