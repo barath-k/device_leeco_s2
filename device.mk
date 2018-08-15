@@ -203,8 +203,6 @@ PRODUCT_PACKAGES += \
 # Libshims
 PRODUCT_PACKAGES += \
     libshims_camera \
-    libshims_ims \
-    libshims_rild_socket \
     libshims_sensor
 
 # Lights
@@ -290,6 +288,7 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     libxml2 \
+    libprotobuf-cpp-full \
     libqsap_sdk \
     libminui
 

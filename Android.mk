@@ -31,6 +31,14 @@ $(KEYMASTER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(KEYMASTER_SYMLINKS)
 
+IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT_APPS)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+$(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "IMS lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+ ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
 WIDEVINE_IMAGES := widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WIDEVINE_IMAGES)))

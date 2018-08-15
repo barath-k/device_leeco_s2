@@ -351,12 +351,10 @@ service cnd /vendor/bin/cnd
     socket cnd stream 660 root inet
     group root wakelock
 
-service dpmd /system/bin/dpmd
-    class late_start
-    socket dpmd stream 660 root system
-    socket tcm  stream 660 root inet
-    socket dpmwrapper stream 660 root inet
-    group system readproc inet radio wake
+service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
+    class main
+    user system
+    group radio system
 
 service irsc_util /vendor/bin/irsc_util "/etc/sec_config"
     class main
