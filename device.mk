@@ -382,6 +382,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/display/pp_calib_data_boe_nt36760_fhd_cmd_dsi_panel.xml:system/etc/pp_calib_data_boe_nt36760_fhd_cmd_dsi_panel.xml \
     $(LOCAL_PATH)/display/pp_calib_data_truly_r69006_fhd_cmd_dsi_panel.xml:system/etc/pp_calib_data_truly_r69006_fhd_cmd_dsi_panel.xml
 
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk-sp
+	
 # SDcard
 PRODUCT_CHARACTERISTICS := nosdcard
 
