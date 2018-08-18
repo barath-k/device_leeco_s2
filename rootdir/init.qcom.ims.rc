@@ -54,7 +54,7 @@ service ims_rtp_daemon /vendor/bin/ims_rtp_daemon
    seclabel u:r:hal_imsrtp:s0
    disabled
 
-service imscmservice /vendor/bin/imsrcsd
+service imscmservice /vendor/bin/imscmservice
    class main
    user system
    group radio net_raw diag log
